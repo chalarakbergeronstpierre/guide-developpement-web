@@ -29,7 +29,7 @@
 .nav__control:hover,
 .nav__control:active {
     color:#fff;
-    background-color: rgba(139, 0, 139, 0);
+    background-color: darkmagenta;
 }
 
 .nav__control:focus {
@@ -38,7 +38,7 @@
      * les remplacer par d'autres styles qui peuvent être plus
      * en accord avec la direction visuelle du projet.
      */
-    outline: ;
+    outline: none;
     /* AUTRES STYLES EN REMPLACEMENT DU OUTLINE */
     /*
      * Les règles outline-offset et outline permettent
