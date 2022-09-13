@@ -67,12 +67,16 @@ footer {
     background-color: $bg_Couleur_Contraste;
 }
 
-header {
-    padding: 1rem;
-    border-bottom: 0.5rem solid $couleur-secondaire;
-    border-image: linear-gradient($couleur-secondaire, $couleur-dominante);
+
     //border-image: linear-gradient(var(--couleur-secondaire), var(--couleur-dominante)) 27;
-}
+header {
+     padding: 1rem;
+     border:{
+         bottom: 0.5rem solid $couleur-secondaire;
+         image: linear-gradient($couleur-secondaire, $couleur-dominante);
+     }
+ }
+
 
 /*** Contenus principal et complémentaire ***/
 
@@ -144,15 +148,14 @@ dd {
     margin-left: 2rem;
     margin-bottom: 1rem;
     padding-right: 1rem;
-}
-
-dd ul {
+    ul {
     padding-left: 2rem;
     margin: 0;
 }
+}
 
 dt::before {
-    background-image: url(../images/css-file-outlineicon-icons.com57592.png);
+    background-image: url(../images/css-file-outline_icon-icons.com_57592.png);
     background-size: contain;
     display: inline-block;
     content: "";

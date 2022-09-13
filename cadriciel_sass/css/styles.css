@@ -454,7 +454,6 @@ body {
   /* facteur multiplicateur de la taille de la police 1.375x16 = 22 */
   line-height: 1.375;
 }
-
 @media (min-width: 600px) {
   body {
     line-height: 1.5;
@@ -465,75 +464,76 @@ body {
     line-height: 1.75;
   }
 }
+
 /* Hiérarchie responsive : plus proche = plus petit  &  plus loin = plus grand */
 h1,
 .h1 { /* = 32px */
   font-size: 3.2rem;
 }
-
 @media (min-width: 600px) {
   h1,
-.h1 { /* = 40px */
+.h1 {
     font-size: 4rem;
   }
 }
 @media (min-width: 800px) {
   h1,
-.h1 { /* = 48px */
+.h1 {
     font-size: 4.8rem;
   }
 }
+
 h2,
 .h2 { /* = 24px */
   font-size: 2.4rem;
 }
-
 @media (min-width: 600px) {
   h2,
-.h2 { /* = 32px */
+.h2 {
     font-size: 3.2rem;
   }
 }
 @media (min-width: 800px) {
   h2,
-.h2 { /* = 36px */
+.h2 {
     font-size: 3.6rem;
   }
 }
+
 h3,
 .h3 { /* = 18px */
   font-size: 1.8rem;
 }
-
 @media (min-width: 600px) {
   h3,
-.h3 { /* = 24px */
+.h3 {
     font-size: 2.4rem;
   }
 }
 @media (min-width: 800px) {
   h3,
-.h3 { /* = 30px */
+.h3 {
     font-size: 3rem;
   }
 }
+
 h4,
 .h4 { /* = 16px */
   font-size: 1.6rem;
 }
-
 @media (min-width: 600px) {
   h4,
-.h4 { /* = 18px */
+.h4 {
     font-size: 1.8rem;
   }
 }
 @media (min-width: 800px) {
   h4,
-.h4 { /* = 22px */
+.h4 {
     font-size: 2.2rem;
   }
 }
+
 /* Menu"
    ========================================================================== */
 /**
@@ -555,19 +555,17 @@ h4,
   border: none;
   padding: 10px;
   min-width: 40px;
+  /* Liste du menu */
 }
-
 @media (min-width: 600px) {
   .nav__control {
     display: none;
   }
 }
-.nav__control:hover,
-.nav__control:active {
+.nav__control:hover, .nav__control:active {
   color: #fff;
-  background-color: darkmagenta;
+  background-color: darkred;
 }
-
 .nav__control:focus {
   /* En mettant la règle outline: none;, les styles du navigateur
    * pour les éléments en cours de focus sont effacés. Il faut alors
@@ -581,70 +579,62 @@ h4,
    * de modifier l'apparence du outline par défaut des navigateurs.
    */
   outline-offset: -5px;
-  outline: darkmagenta auto 5px;
+  outline: darkred auto 5px;
 }
-
-/* Liste du menu */
-.nav__list {
+.nav__control .nav__list {
   margin: 0;
   padding: 0;
   list-style: none;
   max-height: none;
 }
-
 @media (min-width: 600px) {
-  .nav__list-item {
+  .nav__control .nav__list-item {
     display: inline-block;
   }
 }
+
 /* Liens du menu */
 .nav__link {
-  background-color: rgba(145, 0, 145, 0.2);
+  background-color: darkgreen;
   display: block;
   padding: 5px 10px;
   width: 100%;
+  /** Une classe nav__link--active
+      sert à définir un état différent
+      pour l'item de menu actif
+      **/
 }
-
-.nav__link:link,
-.nav__link:visited {
+.nav__link:link, .nav__link:visited {
   text-decoration: none;
   color: inherit;
 }
-
 .nav__link:hover {
   color: #fff;
-  background-color: darkmagenta;
+  background-color: darkgreen;
 }
-
 .nav__link:active {
   color: #fff;
   background-color: magenta;
 }
-
 .nav__link:focus {
   outline-offset: -5px;
   outline: darkmagenta auto 5px;
 }
-
 @media (min-width: 600px) {
   .nav__link:focus {
     outline-offset: 0;
   }
 }
-/** Une classe nav__link--active
-    sert à définir un état différent
-    pour l'item de menu actif
-    **/
 .nav__link--active {
   border-left: 5px solid rgb(101, 68, 180);
 }
-
 @media (min-width: 600px) {
   .nav__link--active {
     border-left: none;
     border-bottom: 5px solid rgb(101, 68, 180);
   }
 }
+
 /** 
  * Styles conditionnels au JavaScript
  * L'ajout par JavaScript de la classe .js
@@ -731,7 +721,7 @@ h4,
 /* Mise en page
    ========================================================================== */
 body {
-  color: #022b50;
+  color: orange;
 }
 
 header .h1,
@@ -764,7 +754,7 @@ footer {
 header {
   padding: 1rem;
   border-bottom: 0.5rem solid red;
-  border-image: linear-gradient(red, darkmagenta);
+  border-image: linear-gradient(red, darkred);
 }
 
 /*** Contenus principal et complémentaire ***/
@@ -776,16 +766,16 @@ aside {
     background-color: #efefef;
   }
 }
-
 @media (min-width: 601px) {
   aside {
     background-color: #efefef;
   }
 }
+
 .description {
   padding: 0 2rem 0;
   border-left: 5rem solid red;
-  border-image: linear-gradient(darkmagenta, red) 27;
+  border-image: linear-gradient(darkred, red) 27;
 }
 
 .description .h2,
@@ -797,15 +787,15 @@ aside h2 {
   padding: 0 1rem 0;
   margin-bottom: 0.5rem;
 }
-
 @media (min-width: 601px) {
   aside h2 {
     margin-top: 0;
   }
-  aside h3 {
-    margin-bottom: 0;
-  }
 }
+aside h2 aside h3 {
+  margin-bottom: 0;
+}
+
 /*** Architecture des CSS ***/
 dl {
   padding: 1rem 0;
@@ -822,7 +812,6 @@ dl,
   margin-bottom: 3rem;
   background-color: rgb(234, 226, 234);
 }
-
 @media (min-width: 601px) {
   .infos {
     padding: 1rem calc(10% + 1rem);
@@ -832,29 +821,29 @@ dl,
     margin-top: 1rem;
   }
 }
+
 dt {
   font-family: NewsCycle-bold, sans-serif;
-  color: darkmagenta;
+  color: darkred;
 }
-
 @media (min-width: 601px) {
   dt {
     border-bottom: 2px dashed #f4a147;
   }
 }
+
 dd {
   margin-left: 2rem;
   margin-bottom: 1rem;
   padding-right: 1rem;
 }
-
 dd ul {
   padding-left: 2rem;
   margin: 0;
 }
 
 dt::before {
-  background-image: url(../images/css-file-outlineicon-icons.com57592.png);
+  background-image: url(../images/css-file-outline_icon-icons.com_57592.png);
   background-size: contain;
   display: inline-block;
   content: "";
@@ -864,7 +853,7 @@ dt::before {
 }
 
 strong.purple {
-  color: darkmagenta;
+  color: darkred;
   text-transform: uppercase;
 }
 
@@ -874,4 +863,4 @@ footer {
   text-align: center;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=styles.css.map */

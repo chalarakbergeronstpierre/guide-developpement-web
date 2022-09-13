@@ -23,16 +23,12 @@
     @media (min-width: 600px) {
         display: none;
     }
-
     &:hover,
     &:active {
         color: #fff;
-        background-color: darkmagenta;
+        background-color: $couleur_dominante;
     }
-}
-
-
-.nav__control:focus {
+    &:focus {
     /* En mettant la règle outline: none;, les styles du navigateur
      * pour les éléments en cours de focus sont effacés. Il faut alors
      * les remplacer par d'autres styles qui peuvent être plus
@@ -45,67 +41,72 @@
      * de modifier l'apparence du outline par défaut des navigateurs.
      */
     outline-offset: -5px;
-    outline: darkmagenta auto 5px;
+    outline:   $couleur_dominante auto 5px;
 }
-
 /* Liste du menu */
 .nav__list {
     margin: 0;
     padding: 0;
     list-style: none;
     max-height: none;
+    &-item{
     @media (min-width: 600px) {
-        display: inline-block;
+    display: inline-block;
     }
+        }
+}
+    //@media (min-width: 600px) {
+    //    display: inline-block;
+    //}
 }
 
 /* Liens du menu */
+    //@mixin backgroundColorCommun{
+    //    background-color: darkgreen;
+    //}
 .nav__link {
-    background-color: rgba(145, 0, 145, 0.2);
+    background-color: darkgreen;
     display: block;
     padding: 5px 10px;
     width: 100%;
-}
 
-.nav__link:link,
-.nav__link:visited {
-    text-decoration: none;
-    color: inherit;
-}
-
-.nav__link:hover {
-    color:#fff;
-    background-color: darkmagenta;
-}
-
-.nav__link:active {
-    color:#fff;
-    background-color: magenta;
-}
-
-
-.nav__link:focus {
-    outline-offset: -5px;
-    outline: darkmagenta auto 5px;
-@media (min-width: 600px) {
-    .nav__link:focus {
-        outline-offset: 0; 
+    &:link,
+    &:visited {
+        text-decoration: none;
+        color: inherit;
     }
 
+    &:hover {
+        color: #fff;
+        background-color: darkgreen;
+    }
 
-/** Une classe nav__link--active
-    sert à définir un état différent
-    pour l'item de menu actif
-    **/
-.nav__link--active {
-    border-left: 5px solid rgba(101, 68, 180, 1);
-@media (min-width: 600px) {
-        border-left:none;
-        border-bottom:5px solid rgba(101, 68, 180, 1);
+    &:active {
+        color: #fff;
+        background-color: magenta;
+    }
+
+    &:focus {
+        outline-offset: -5px;
+        outline: darkmagenta auto 5px;
+        @media (min-width: 600px) {
+            outline-offset: 0;
+        }
+    }
+
+    /** Une classe nav__link--active
+        sert à définir un état différent
+        pour l'item de menu actif
+        **/
+
+    &--active {
+        border-left: 5px solid rgba(101, 68, 180, 1);
+        @media (min-width: 600px) {
+            border-left: none;
+            border-bottom: 5px solid rgba(101, 68, 180, 1);
+        }
     }
 }
-
-
 /** 
  * Styles conditionnels au JavaScript
  * L'ajout par JavaScript de la classe .js
@@ -123,7 +124,7 @@
     .js .nav--closed .nav__list {
         max-height: 0;
         transition: max-height 0.5s;
-        }
-     }
     }
 }
+
+
